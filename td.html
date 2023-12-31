@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatrice</title>
+	<meta charset="UTF-8">
+	<script>
+		function calculer() {
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			if (isNaN(num1) || isNaN(num2)) {
+				alert("Veuillez saisir des nombres valides.");
+				return;
+			}
+			if (num2 == 0) {
+				alert("Le deuxième nombre ne peut pas être zéro.");
+				return;
+			}
+			document.getElementById("resultat").innerHTML = "Somme : " + (parseFloat(num1) + parseFloat(num2)) + "<br>Multiplication : " + (parseFloat(num1) * parseFloat(num2)) + "<br>Division : " + (parseFloat(num1) / parseFloat(num2)) + "<br>Soustraction : " + (parseFloat(num1) - parseFloat(num2));
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label for="num1">Nombre 1 :</label>
+		<input type="text" id="num1" name="num1"><br><br>
+		<label for="num2">Nombre 2 :</label>
+		<input type="text" id="num2" name="num2"><br><br>
+		<input type="button" value="Calculer" onclick="calculer()">
+	</form>
+	<br>
+	<div id="resultat"></div>
+</body>
+</html>

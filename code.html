@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form id="form">
+        <label> entrer un nom</label>
+        <input type ="text" id="nom" />
+        <button type ="submit"> valider </button>
+    </form>
+     <p id="error" > </p>
+     <script>
+        const form = document.getElementById("form");
+    const error = document.getElementById("error");
+    form.addEventListener("submit",function(event){
+        const nom = document.getElementById("nom").value;
+        if(nom == ""){
+            error.textContent="Veuillez remplir";
+            event.preventDefault();
+        } 
+        else{
+            error.textContent = "";
+        }
+        })
+    </script>
+</body>
+</html>
